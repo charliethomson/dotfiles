@@ -33,13 +33,6 @@ set $menu dmenu_path | dmenu | xargs swaymsg exec --
     bindsym $mod+d exec $menu
     bindsym $mod+Space exec $menu
 
-    # Drag floating windows by holding down $mod and left mouse button.
-    # Resize them with right mouse button + $mod.
-    # Despite the name, also works for non-floating windows.
-    # Change normal to inverse to use left mouse button for resizing and right
-    # mouse button for dragging.
-    floating_modifier $mod normal
-
     # reload the configuration file
     bindsym $mod+Shift+c reload
 
@@ -74,27 +67,27 @@ set $menu dmenu_path | dmenu | xargs swaymsg exec --
 # Workspaces:
 #
     # switch to workspace
-    bindsym $mod+1 workspace Main
-    bindsym $mod+2 workspace Firefox
-    bindsym $mod+3 workspace Spotify
-    bindsym $mod+4 workspace 4
-    bindsym $mod+5 workspace 5
-    bindsym $mod+6 workspace 6
-    bindsym $mod+7 workspace 7
-    bindsym $mod+8 workspace 8
-    bindsym $mod+9 workspace 9
-    bindsym $mod+0 workspace 10
+    bindsym $mod+1 workspace 1:a
+    bindsym $mod+2 workspace 2:b
+    bindsym $mod+3 workspace 3:c
+    bindsym $mod+4 workspace 4:d
+    bindsym $mod+5 workspace 5:e
+    bindsym $mod+6 workspace 6:f
+    bindsym $mod+7 workspace 7:g
+    bindsym $mod+8 workspace 8:h
+    bindsym $mod+9 workspace 9:i
+    bindsym $mod+0 workspace 10:j
     # move focused container to workspace
-    bindsym $mod+Shift+1 move container to workspace Main
-    bindsym $mod+Shift+2 move container to workspace Firefox
-    bindsym $mod+Shift+3 move container to workspace Spotify
-    bindsym $mod+Shift+4 move container to workspace 4
-    bindsym $mod+Shift+5 move container to workspace 5
-    bindsym $mod+Shift+6 move container to workspace 6
-    bindsym $mod+Shift+7 move container to workspace 7
-    bindsym $mod+Shift+8 move container to workspace 8
-    bindsym $mod+Shift+9 move container to workspace 9
-    bindsym $mod+Shift+0 move container to workspace 10
+    bindsym $mod+Shift+1 move container to workspace 1:a
+    bindsym $mod+Shift+2 move container to workspace 2:b
+    bindsym $mod+Shift+3 move container to workspace 3:c
+    bindsym $mod+Shift+4 move container to workspace 4:d
+    bindsym $mod+Shift+5 move container to workspace 5:e
+    bindsym $mod+Shift+6 move container to workspace 6:f
+    bindsym $mod+Shift+7 move container to workspace 7:g
+    bindsym $mod+Shift+8 move container to workspace 8:h
+    bindsym $mod+Shift+9 move container to workspace 9:i
+    bindsym $mod+Shift+0 move container to workspace 10:j
     # Note: workspaces can have any name you want, not just numbers.
     # We just use 1-10 as the default.
 #
@@ -162,7 +155,9 @@ bindsym $mod+r mode "resize"
 # Read `man 5 sway-bar` for more information about this section.
 bar {
     position bottom
-    
+
+    strip_workspace_numbers yes
+
     # When the status_command prints a new line to stdout, swaybar updates.
     # The default just shows the current date and time.
     
@@ -179,11 +174,6 @@ bar {
     }
 }
 
-include /etc/sway/config.d/*
-
-
-# WALLPAPER 
-output "*" bg /home/c/.config/dmgc3wc28p931.png fill
 
 # Custom keys
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
@@ -193,18 +183,28 @@ bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
 bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
 bindsym XF86MonBrightnessUp exec brightnessctl set +5%
 
-bindsym ctrl+alt+l exec swaylock -i /home/c/.config/dmgc3wc28p931.png 
+bindsym ctrl+alt+l exec i3lock -i /home/c/.config/dmgc3wc28p931.png 
 
 gaps outer 25
 gaps inner 7
 
-input "*" {
-    tap enabled
-    middle_emulation enabled
-}
+# input "*" {
+#     tap enabled
+#     middle_emulation enabled
+# }
 
 client.focused          #000000FF #4C4B70FF #9FAAC2F0 #9FAAC2FF #000000FF
 client.focused_inactive #000000FF #09050CFF #9FAAC2F0 #9FAAC2FF #000000FF
 client.unfocused        #000000FF #09050CFF #9FAAC2F0 #9FAAC2FF #000000FF
 client.urgent           #000000FF #2E2F6FFF #090F0CF0 #9FAAC2FF #000000FF
+
+# Touchpad tap enable
+exec xinput set-prop 12 286 1
+
+# middle click emulation
+exec xinput set-prop 12 304 1
+
+# don't disable while typing
+exec xinput set-prop 12 296 0
+
 
