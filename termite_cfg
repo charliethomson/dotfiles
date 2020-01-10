@@ -1,67 +1,44 @@
+
 [options]
-#https://github.com/thestinger/termite/blob/master/config
-allow_bold = true
-audible_bell = false
-browser = xdg-open
-clickable_url = true
-cursor_blink = true
-cursor_shape = block
-dynamic_title = true
-filter_unmatched_urls = true
-font = Monospace 12
-geometry = 900x650
-highlight = #2f2f2f
-icon_name = terminal
-modify_other_keys = false
-mouse_autohide = false
-scroll_on_output = false
-scroll_on_keystroke = true
-scrollback_lines = 15000
-size_hints = false
-search_wrap = true
-urgent_on_bell = true
-
-[hints]
-#font = Monospace 12
-#foreground = #dcdccc
-#background = #3f3f3f
-#active_foreground = #e68080
-#active_background = #3f3f3f
-#padding = 2
-#border = #3f3f3f
-#border_width = 10
-#roundness = 2.0
-
-############################################################
-#### You can change the color coding to your liking
-#### There is a folder themes in ~/config/termite/themes
-#### Copy/paste the colors from one of the 79+ templates to this one
-#### A backup of the original config termite is present
-############################################################
-#### Use websites to make the terminal your own
-#### https://terminal.sexy
-#### https://critical.ch/xterm/
-############################################################
+font = Monospace 11
 
 [colors]
 
-background      = rgba(9, 5, 12, 0.8)
-foreground      = #9faac2
-foreground_bold = #9faac2
-cursor          = #9faac2
-color0          = #09050C
-color1          = #302A52
-color2          = #2E2F6F
-color3          = #4B3670
-color4          = #384972
-color5          = #4C4B70
-color6          = #404387
-color7          = #9faac2
-color8          = #6f7687
-color9          = #302A52
-color10         = #2E2F6F
-color11         = #4B3670
-color12         = #384972
-color13         = #4C4B70
-color14         = #404387
-color15         = #9faac2
+# special
+foreground      = #a6a28c
+foreground_bold = #a6a28c
+cursor          = #a6a28c
+background      = #20201d
+
+# black
+color0  = #20201d
+color8  = #7d7a68
+
+# red
+color1  = #d73737
+color9  = #d73737
+
+# green
+color2  = #60ac39
+color10 = #60ac39
+
+# yellow
+color3  = #cfb017
+color11 = #cfb017
+
+# blue
+color4  = #6684e1
+color12 = #6684e1
+
+# magenta
+color5  = #b854d4
+color13 = #b854d4
+
+# cyan
+color6  = #1fad83
+color14 = #1fad83
+
+# white
+color7  = #a6a28c
+color15 = #fefbec
+
